@@ -1,0 +1,20 @@
+<h1>Awesome Books!</h1>
+<!-- <button (click)="toggleBooks()">
+    <ng-container *ngIf = "!isShowing">Show Books</ng-container >
+    <ng-container  *ngIf = "isShowing">Hide Books</ng-container ></button> -->
+
+        <button (click)="toggleBooks()">Toggle</button>
+<ul *ngIf="isShowing">
+    <!-- <img src="{{src}}" alt="{{name}}" width="100">
+    <li>{{name}} by {{author}}</li>
+    <img src="{{src2}}" alt="{{name2}}" width="100">
+    <li>{{name2}} by {{author2}}</li>
+    <p>Name: {{myName}}</p>
+    <input type="text" [(ngModel)]="myName"/> -->
+    </ul>
+
+    <div class="grid grid-cols-2" *ngIf="isShowing">
+        <ng-container *ngFor="let book of books; let i = index" >
+            <app-book (bookEmitter)="addToCart($event)" [book]="book"></app-book>
+        </ng-container>
+    </div>

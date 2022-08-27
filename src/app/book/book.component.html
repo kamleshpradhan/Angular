@@ -1,0 +1,14 @@
+
+<div class="card">
+    <img class="w-4/12" src={{book.imgSrc}} width="100">
+    <br/>
+    <div class="w-4/12">
+    <div class="cName">
+    <p>Name: {{book.name | titlecase}}  {{book.author | titlecase}}</p>
+    <p> Price : {{book.price | currency:'INR'}}</p>
+    </div>
+    <button class="btn"  *ngIf="!isInCart" (click)="addToCart()"> Add to cart</button>
+    <button class="btn"  *ngIf="isInCart" (click)="removeFromCart()">Remove from cart</button>
+</div>
+</div>
+
